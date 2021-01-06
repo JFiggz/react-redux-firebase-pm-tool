@@ -14,7 +14,7 @@ export default function App() {
         <Route path={['/','/dashboard','/project']} exact>
           <Dashboard />
         </Route>
-        <Route path='/project/:id' render={(routeProps) => (<ProjectDetail {...routeProps} />)} />
+        <Route path='/project/:id' render={(routeProps) => <ProjectDetail {...routeProps} />} />
         <Route path='/create'>
           <CreateProject />
         </Route>
