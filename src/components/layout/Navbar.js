@@ -5,7 +5,7 @@ import SignedOutLinks from './SignedOutLinks';
 export default function Navbar(){
     return(
         <header>
-            <nav className='nav'>
+            <nav className='container nav'>
                 <Link to='/' className='nav__logo-link'>Pro Manage</Link>
                 <SignedInLinks />
                 <SignedOutLinks />

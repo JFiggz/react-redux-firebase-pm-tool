@@ -1,0 +1,12 @@
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @include tablet{
+        width: 91.667%;
+    }
+
+    @include mobile{
+        width: 91.467%;
+    }
+}

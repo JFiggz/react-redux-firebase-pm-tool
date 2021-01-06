@@ -10,7 +10,7 @@ export default function SignedInLinks(){
                 <NavLink to='/' className='nav__link'>Log Out</NavLink>
             </li>
             <li className='nav__list-item'>
-                <p>JF</p>
+                <NavLink to='/' className='nav__link'>JF</NavLink>
             </li>
         </ul>
     );

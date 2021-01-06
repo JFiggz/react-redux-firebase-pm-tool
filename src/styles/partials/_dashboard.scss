@@ -1,0 +1,5 @@
+.dashboard{
+    width: 100%;
+    @include flex(row, space-evenly);
+    padding: spaceIncr(4) 0;
+}

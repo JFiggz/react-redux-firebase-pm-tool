@@ -1,0 +1,33 @@
+.notifications{
+    padding: spaceIncr(3) spaceIncr(5);
+    margin-right: spaceIncr(3);
+    background-color: $db-card-bg;
+    border-radius: spaceIncr();
+    align-self: flex-start;
+
+    &__header{
+        margin: 0 0 spaceIncr(3) 0;
+    }
+
+    &__list{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    &__list-item{
+       padding: spaceIncr() 0;
+       margin-bottom: spaceIncr(0.5);
+
+       & > span{
+        @include flex(row,flex-start,center);
+       }
+    }
+
+    &__text{
+        margin: 0 0 spaceIncr();
+        &--name{
+            margin: 0 spaceIncr() spaceIncr() 0;
+        }
+    }
+}

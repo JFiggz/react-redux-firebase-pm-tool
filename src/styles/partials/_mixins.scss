@@ -1,0 +1,24 @@
+@mixin flex ( $dir: row, $justify: flex-start, $align: stretch, $wrap: nowrap ){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $dir;
+    flex-wrap: $wrap;
+}
+
+@function spaceIncr( $incr: 1 ){
+    $result: $incr * $spacing;
+    @return $result;
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1199px) {
+      @content;
+    }
+  }
+  
+  @mixin mobile {
+    @media screen and (max-width: 767px) {
+      @content;
+    }
+  }

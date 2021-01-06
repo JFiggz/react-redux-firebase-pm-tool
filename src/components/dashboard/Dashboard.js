@@ -5,11 +5,9 @@ import NotificationList from './NotificationList';
 class Dashboard extends Component{
     render(){
         return(
-            <main className='dashboard'>
-                <div className="container">
-                    <ProjectList />
+            <main className='container dashboard'>
                     <NotificationList />
-                </div>
+                    <ProjectList />
             </main>
         );
     }

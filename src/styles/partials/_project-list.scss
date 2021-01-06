@@ -1,0 +1,27 @@
+.projects{
+    flex-grow: 1;
+
+    &__list{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    &__list-item{
+       padding: spaceIncr(3);
+       margin-bottom: spaceIncr(3);
+       background-color: $db-card-bg;
+       border-radius: spaceIncr();
+    }
+
+    &__title{
+        margin: 0 0 spaceIncr(3) 0;
+    }
+
+    &__text{
+        margin: 0 0 spaceIncr();
+        &--name{
+            margin: 0 spaceIncr() spaceIncr() 0;
+        }
+    }
+}
