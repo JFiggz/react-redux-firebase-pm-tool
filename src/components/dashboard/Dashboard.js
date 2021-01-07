@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
 import ProjectList from '../project/ProjectList';
 import NotificationList from './NotificationList';
+import { connect } from 'react-redux';
 
 class Dashboard extends Component{
     render(){
         return(
             <main className='container dashboard'>
                     <NotificationList />
-                    <ProjectList />
+                    <ProjectList projects={this.props.projects} />
             </main>
         );
     }
 };
 
-export default Dashboard;
+const mapStateToProps = (state) => {
+    return ({
+        projects: state.project.projects,
+    });
+};
+
+export default connect(mapStateToProps)(Dashboard);
