@@ -1,0 +1,33 @@
+.signup{
+    @include flex(row,center,center);
+
+    &__header{
+        margin: 0 0 spaceIncr(3) 0;
+    }
+    
+    &__form{
+        width: 50%;
+        min-width: 500px;
+        @include flex(column);
+        background-color: $card-bg;
+        border-radius: spaceIncr();
+        padding: spaceIncr(3);
+    }
+
+    &__label{
+        @include flex(column);
+        margin-bottom: spaceIncr(3);
+    }
+
+    &__input{
+        margin-top: spaceIncr(0.5);
+        padding: spaceIncr();
+        border-radius: spaceIncr();
+        border:none;
+        font-family: inherit;
+    }
+
+    button{
+        align-self: flex-start;
+    }
+}

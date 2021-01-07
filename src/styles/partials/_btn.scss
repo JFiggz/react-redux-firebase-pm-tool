@@ -1,0 +1,23 @@
+.btn{
+    padding: spaceIncr() spaceIncr(3);
+    border-radius: spaceIncr();
+    border: 2px solid transparent;
+    background-color: $btn-bg;
+
+    &:hover{
+        background-color: $btn-hover;
+    }
+
+    &:active{
+        outline: none;
+        border-radius: spaceIncr();
+        border: 2px solid $font-light;
+        background-color: $btn-active;
+    }
+
+    &:focus{
+        outline: none;
+        border-radius: spaceIncr();
+        border: 2px solid $font-light;
+    }
+}

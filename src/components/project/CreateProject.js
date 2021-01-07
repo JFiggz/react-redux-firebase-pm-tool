@@ -30,7 +30,7 @@ export default function CreateProject(){
                 </label>
                 <label className='create-proj__label' >
                     Project Details
-                    <textarea className='create-proj__details' onChange={(e)=> handleChange(e)} type='text' name='details' placeholder="Enter project details" cols='30' row='10'></textarea>
+                    <textarea className='create-proj__details' onChange={(e)=> handleChange(e)} type='text' name='details' placeholder="Enter project details" cols='30' row='30'></textarea>
                 </label>
                 <button className='btn' type='submit'>Create Project</button>
             </form>
