@@ -1,6 +1,11 @@
 import { useState } from 'react';
+import { connect } from 'react-redux';
+import { createProject } from '../../store/actions/projActions';
+import { useHistory } from 'react-router-dom';
 
-export default function CreateProject(){
+function CreateProject({createProj}){
+
+    const history = useHistory();
 
     const [data, updateData] = useState({
         title:'',
@@ -18,6 +23,8 @@ export default function CreateProject(){
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        createProj(data);
+        history.push('/');
     };
 
     return(
@@ -37,3 +44,12 @@ export default function CreateProject(){
         </section>
     );
 };
+
+
+const mapDispatchToProps = (dispatch) => {
+    return({
+        createProj: (project) => dispatch(createProject(project)),
+    });
+};
+
+export default connect(null, mapDispatchToProps)(CreateProject);
