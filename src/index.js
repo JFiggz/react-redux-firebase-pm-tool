@@ -3,28 +3,31 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './styles/main.css';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware} from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './store/reducers/rootReducer';
 import thunk from 'redux-thunk';
-import { reduxFirestore, getFirestore } from 'redux-firestore';
-import { reactReduxFirebase, getFirebase } from 'react-redux-firebase';
-import fbConfig from './config/fbConfig';
+import { createFirestoreInstance } from 'redux-firestore';
+import { ReactReduxFirebaseProvider} from 'react-redux-firebase';
+import firebase, { rrfConfig } from './config/fbConfig';
 
-const store = createStore(rootReducer, 
-  compose(
-    applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
-    reduxFirestore(fbConfig),
-    reactReduxFirebase(fbConfig),
-  )
-);
+const store = createStore(rootReducer, applyMiddleware(thunk));
+
+const rrfProps = {
+  firebase,
+  config: rrfConfig,
+  dispatch: store.dispatch,
+  createFirestoreInstance
+};
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router>
-        <App />
-      </Router>
+      <ReactReduxFirebaseProvider {...rrfProps}>
+        <Router>
+          <App />
+        </Router>
+      </ReactReduxFirebaseProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

@@ -34,11 +34,14 @@ const projReducer = (state = initState, action) => {
                     }
                 ],
             });
-        default:
-            break;
-    }; 
+        
+        case 'CREATE_PROJECT_ERROR':
+            console.log('Create proj error:', action.err);
+            return state;
 
-    return state;
+        default:
+            return state;
+    }; 
 };
 
 export default projReducer;

@@ -2,8 +2,11 @@ import { useState } from 'react';
 import { connect } from 'react-redux';
 import { createProject } from '../../store/actions/projActions';
 import { useHistory } from 'react-router-dom';
+import { useFirestore } from 'react-redux-firebase';
 
 function CreateProject({createProj}){
+
+    const firestore= useFirestore();
 
     const history = useHistory();
 
@@ -23,7 +26,7 @@ function CreateProject({createProj}){
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        createProj(data);
+        createProj(data, firestore);
         history.push('/');
     };
 
@@ -48,7 +51,7 @@ function CreateProject({createProj}){
 
 const mapDispatchToProps = (dispatch) => {
     return({
-        createProj: (project) => dispatch(createProject(project)),
+        createProj: (project, firestore) => dispatch(createProject(project, firestore)),
     });
 };
 
