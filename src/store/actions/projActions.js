@@ -1,6 +1,5 @@
 export const createProject = (project, firestore) => {
     return((dispatch, getState)=>{
-
         //Making an async call to add the data to the Firestore DB prior to changing state in store
         firestore.add({collection: 'projects'},{
             ...project,
