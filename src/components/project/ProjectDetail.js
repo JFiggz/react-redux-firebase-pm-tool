@@ -14,8 +14,7 @@ function ProjectDetail({project, match}){
         </section>
     )
     :
-        <h1 className='container proj-detail__title'>Loading Project...</h1>
-    ;
+        <h1 className='container proj-detail__title'>Loading Project...</h1>;
 };
 
 const mapStateToProps = (state, ownProps) => {
