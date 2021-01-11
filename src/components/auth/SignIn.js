@@ -1,10 +1,15 @@
 import { useState } from 'react';
+import { connect } from 'react-redux';
+import { useFirebase } from 'react-redux-firebase';
+import { signIn } from '../../store/actions/authActions';
 
-export default function SignIn(){
+function SignIn({signInUser, authError}){
+
+    const firebase = useFirebase();
 
     const [data, updateData] = useState({
         email:'',
-        pwd:'',
+        password:'',
     });
 
     const handleChange = (e) => {
@@ -18,6 +23,7 @@ export default function SignIn(){
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        signInUser(data, firebase);
     };
 
     return(
@@ -30,10 +36,26 @@ export default function SignIn(){
                 </label>
                 <label className='signin__label' >
                     Password
-                    <input className='signin__input' onChange={(e)=> handleChange(e)} type='password' name='pwd' placeholder="Enter your password" />
+                    <input className='signin__input' onChange={(e)=> handleChange(e)} type='password' name='password' placeholder="Enter your password" />
                 </label>
                 <button className='btn' type='submit'>Sign In</button>
+                {authError ? <p className='signin__error'>No user found with those credentials, please try again.</p>: ''}
             </form>
         </section>
     );
 };
+
+
+const mapStateToProps = (state) => {
+    return({
+        authError: state.auth.authError,
+    });
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return({
+        signInUser: (data, firebase) => dispatch(signIn(data, firebase)),
+    });
+};
+
+export default connect( mapStateToProps, mapDispatchToProps )(SignIn);
