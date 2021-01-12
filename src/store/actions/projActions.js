@@ -1,5 +1,8 @@
 export const createProject = (project, firestore) => {
     return((dispatch, getState)=>{
+
+        const userData = getState().firebase;
+        
         //Making an async call to add the data to the Firestore DB prior to changing state in store
         firestore.add(
             {
@@ -7,9 +10,9 @@ export const createProject = (project, firestore) => {
             },
             {
             ...project,
-            authorFirstName: 'Jim',
-            authorLastName: 'Figgz',
-            authorId: 11234,
+            authorFirstName: userData.profile.firstName,
+            authorLastName: userData.profile.lastName,
+            authorId: userData.auth.uid,
             createdOn: new Date(),
             },
         )

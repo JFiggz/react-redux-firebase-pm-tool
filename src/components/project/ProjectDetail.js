@@ -8,7 +8,7 @@ function ProjectDetail({project, match}){
             <div className='proj-detail__container'>
                 <h1 className='proj-detail__title'>{`${project.title} - ${match.params.id}`}</h1>
                 <p className='proj-detail__details'>{project.details}</p>
-                <p className='proj-detail__text'>{`Posted by ${project.authorFirstName} ${project.authorLastName}`}</p>
+                <p className='proj-detail__text'>{`Posted by: ${project.authorFirstName} ${project.authorLastName}`}</p>
                 <p className='proj-detail__text'>{project.createdOn.toDate().toLocaleDateString('en-US')}</p>
             </div>
         </section>
