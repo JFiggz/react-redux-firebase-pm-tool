@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { useFirebase } from 'react-redux-firebase';
 import { signIn } from '../../store/actions/authActions';
 
-function SignIn({signInUser, authError}){
+function SignIn({signInUser, authError, errMessage}){
 
     const firebase = useFirebase();
 
@@ -39,7 +39,7 @@ function SignIn({signInUser, authError}){
                     <input className='signin__input' onChange={(e)=> handleChange(e)} type='password' name='password' placeholder="Enter your password" />
                 </label>
                 <button className='btn' type='submit'>Sign In</button>
-                {authError ? <p className='signin__error'>No user found with those credentials, please try again.</p>: ''}
+                {authError ? <p className='signin__error'>{errMessage}</p>: ''}
             </form>
         </section>
     );
@@ -49,6 +49,7 @@ function SignIn({signInUser, authError}){
 const mapStateToProps = (state) => {
     return({
         authError: state.auth.authError,
+        errMessage: state.auth.errMessage,
     });
 };
 

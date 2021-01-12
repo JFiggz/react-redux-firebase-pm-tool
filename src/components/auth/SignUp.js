@@ -1,10 +1,16 @@
 import { useState } from 'react';
+import { connect } from 'react-redux';
+import { useFirebase, useFirestore } from 'react-redux-firebase';
+import { signUp } from '../../store/actions/authActions';
 
-export default function SignUp(){
+function SignUp({signUpUser, authError, errMessage}){
+
+    const firebase = useFirebase();
+    const firestore = useFirestore();
 
     const [data, updateData] = useState({
         email:'',
-        pwd:'',
+        password:'',
         fName:'',
         lName:'',
     });
@@ -20,6 +26,7 @@ export default function SignUp(){
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        signUpUser(data, firebase, firestore);
     };
 
     return(
@@ -32,7 +39,7 @@ export default function SignUp(){
                 </label>
                 <label className='signup__label' >
                     Password
-                    <input className='signup__input' onChange={(e)=> handleChange(e)} type='password' name='pwd' placeholder="Enter your password" />
+                    <input className='signup__input' onChange={(e)=> handleChange(e)} type='password' name='password' placeholder="Enter your password" />
                 </label>
                 <label className='signup__label' >
                     First Name
@@ -43,7 +50,23 @@ export default function SignUp(){
                     <input className='signup__input' onChange={(e)=> handleChange(e)} type='text' name='lName' placeholder="Enter your last name" />
                 </label>
                 <button className='btn' type='submit'>Sign Up</button>
+                {authError ? <p className='signin__error'>{errMessage}</p>: ''}
             </form>
         </section>
     );
 };
+
+const mapStateToProps = (state) => {
+    return({
+        authError: state.auth.authError,
+        errMessage: state.auth.errMessage,
+    });
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return({
+        signUpUser: (userData, firebase, firestore) => dispatch(signUp(userData, firebase, firestore)),
+    });
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
