@@ -33,30 +33,22 @@ export const signOut = (firebase) => {
 export const signUp = (userData, firebase, firestore) => {
     return((dispatch, getState) => {
 
-        firebase.createUser({
-            email: userData.email,
-            password: userData.password
-        })
-        .then(({user}) => {
-            
-            firestore.collection('users').doc(user.uid).set({
-                //Take first character, convert to upper case and concatenate with remaining string i.e. making sure names are appropriately cased in the database.
-                firstName: userData.fName.charAt(0).toUpperCase() + userData.fName.slice(1),
-                lastName: userData.lName.charAt(0).toUpperCase() + userData.lName.slice(1),
+        firebase.createUser(
+            {
+                email: userData.email,
+                password: userData.password
+            },
+            //Profile data to be established in the Firestore DB for this user
+            {
+                firstName: userData.fName.charAt(0).toUpperCase() + userData.fName.slice(1).toLowerCase(),
+                lastName: userData.lName.charAt(0).toUpperCase() + userData.lName.slice(1).toLowerCase(),
                 initials: userData.fName.charAt(0).toUpperCase() + userData.lName.charAt(0).toUpperCase(),
-            })
-            .then(resp => {
-                dispatch({
-                    type: 'SIGNUP_SUCCESS'
-                });
-            })
-            .catch(err => {
-                dispatch({
-                    type: 'SIGNUP_ERROR',
-                    err
-                });
+            }
+        )
+        .then(resp => {
+            dispatch({
+                type: 'SIGNUP_SUCCESS'
             });
-        
         })
         .catch(err => {
             dispatch({
