@@ -30,7 +30,7 @@ export const signOut = (firebase) => {
     });
 };
 
-export const signUp = (userData, firebase, firestore) => {
+export const signUp = (userData, firebase) => {
     return((dispatch, getState) => {
 
         firebase.createUser(

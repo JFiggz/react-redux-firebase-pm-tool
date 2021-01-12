@@ -4,7 +4,82 @@
         @include flex(row,space-between,flex-start,wrap);
         background-color: $card-bg;
         border-radius: spaceIncr();
-        padding: spaceIncr(3);
+        padding: spaceIncr(5) spaceIncr(3) spaceIncr(3);
+        position: relative;
+    }
+
+    &__action-container{
+        position: absolute;
+        top:0;
+        right: 0;
+        @include flex(row,center,center);
+        padding: spaceIncr()  spaceIncr() 0 0;
+    }
+
+    &__btn{
+        @include flex(row,center,center);
+        background-color: transparent;
+        border: 1px solid transparent;
+        border-radius: spaceIncr();
+        padding: spaceIncr();
+        margin: 0 0 0 spaceIncr(2);
+        cursor: pointer;
+        
+        &:hover{
+            outline: none;
+            border: 1px solid $btn-border;
+        }
+
+        &:active{
+            outline: none;
+            border: 1px solid $btn-border;
+        }
+
+        &:focus{
+            outline: none;
+            border: 1px solid $btn-border;
+        }
+    }
+
+    &__icon{
+        width: 20px;
+        height: 20px;
+        pointer-events: none;
+    }
+
+    &__form{
+        width: 100%;
+        @include flex(column);
+        padding: 0 0 spaceIncr(4);
+        margin: 0 0 spaceIncr(4);
+        border-bottom: 1px solid $global-border;
+    }
+
+    &__label{
+        @include flex(column);
+        margin-bottom: spaceIncr(2);
+    }
+
+    &__input{
+        margin-top: spaceIncr(0.5);
+        padding: spaceIncr();
+        border-radius: spaceIncr();
+        border:none;
+        font-family: inherit;
+    }
+
+    &__txt-area{
+        margin-top: spaceIncr(0.5);
+        padding: spaceIncr();
+        border-radius: spaceIncr();
+        border:none;
+        font-family: inherit;
+        resize: none;
+        height: 150px;
+    }
+
+    &__edit-btn{
+        align-self: flex-start;
     }
 
     &__title{
@@ -15,7 +90,7 @@
     &__details{
         width: 100%;
         padding: 0 spaceIncr(3) spaceIncr(4);
-        margin: 0 0 spaceIncr(4) 0;
+        margin: 0 0 spaceIncr(4);
         border-bottom: 1px solid $global-border;
     }
 

@@ -30,3 +30,55 @@ export const createProject = (project, firestore) => {
         });
     });
 };
+
+
+export const deleteProject = (projectId, firestore) => {
+    return ((dispatch, getState) => {
+        firestore.delete(
+            {
+                collection: 'projects',
+                doc: projectId
+            },
+        )
+        .then(resp => {
+            dispatch({
+                type: 'DELETE_PROJECT',
+                projectId
+            });
+        })
+        .catch(err => {
+            dispatch({
+                type: 'DELETE_PROJECT_ERROR',
+                err
+            });
+        });
+    });
+};
+
+export const editProject = (projectId, project, firestore) => {
+    return((dispatch, getState) => {
+
+        firestore.update(
+            {
+                collection: 'projects',
+                doc: projectId
+            },
+            {
+                ...project
+            }
+        )
+        .then( resp => {
+            dispatch({
+                type: 'EDIT_PROJECT',
+                projectId,
+                project
+            });
+        })
+        .catch( err => {
+            dispatch({
+                type: 'EDIT_PROJECT_ERROR',
+                err
+            });
+        });
+    });
+};

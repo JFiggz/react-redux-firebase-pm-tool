@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { connect } from 'react-redux';
-import { useFirebase, useFirestore } from 'react-redux-firebase';
+import { useFirebase } from 'react-redux-firebase';
 import { signUp } from '../../store/actions/authActions';
 
 function SignUp({signUpUser, authError, errMessage}){
 
     const firebase = useFirebase();
-    const firestore = useFirestore();
 
     const [data, updateData] = useState({
         email:'',
@@ -26,7 +25,7 @@ function SignUp({signUpUser, authError, errMessage}){
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        signUpUser(data, firebase, firestore);
+        signUpUser(data, firebase);
     };
 
     return(
@@ -65,7 +64,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return({
-        signUpUser: (userData, firebase, firestore) => dispatch(signUp(userData, firebase, firestore)),
+        signUpUser: (userData, firebase) => dispatch(signUp(userData, firebase)),
     });
 };
 

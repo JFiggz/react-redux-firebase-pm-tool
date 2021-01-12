@@ -556,7 +556,139 @@ header {
       flex-wrap: wrap;
   background-color: #eeeeee;
   border-radius: 8px;
-  padding: 24px;
+  padding: 40px 24px 24px;
+  position: relative;
+}
+
+.proj-detail__action-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  padding: 8px 8px 0 0;
+}
+
+.proj-detail__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 8px;
+  margin: 0 0 0 16px;
+  cursor: pointer;
+}
+
+.proj-detail__btn:hover {
+  outline: none;
+  border: 1px solid #393e46;
+}
+
+.proj-detail__btn:active {
+  outline: none;
+  border: 1px solid #393e46;
+}
+
+.proj-detail__btn:focus {
+  outline: none;
+  border: 1px solid #393e46;
+}
+
+.proj-detail__icon {
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.proj-detail__form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  padding: 0 0 32px;
+  margin: 0 0 32px;
+  border-bottom: 1px solid #393e46;
+}
+
+.proj-detail__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin-bottom: 16px;
+}
+
+.proj-detail__input {
+  margin-top: 4px;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  font-family: inherit;
+}
+
+.proj-detail__txt-area {
+  margin-top: 4px;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  font-family: inherit;
+  resize: none;
+  height: 150px;
+}
+
+.proj-detail__edit-btn {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 
 .proj-detail__title {
@@ -567,7 +699,7 @@ header {
 .proj-detail__details {
   width: 100%;
   padding: 0 24px 32px;
-  margin: 0 0 32px 0;
+  margin: 0 0 32px;
   border-bottom: 1px solid #393e46;
 }
 

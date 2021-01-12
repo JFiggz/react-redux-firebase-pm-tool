@@ -1,4 +1,4 @@
-import { Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Dashboard from './components/dashboard/Dashboard';
 import ProjectDetail from './components/project/ProjectDetail';
@@ -19,6 +19,7 @@ export default function App() {
           <PrivateRoute path='/create' render={() => <CreateProject />} />
           <RouteGuard path='/signin' render={() => <SignIn />} />
           <RouteGuard path='/signup' render={() => <SignUp />} />
+          <Route path='/*'><Redirect to='/'/></Route>
         </Switch>
       </AuthIsLoaded>
     </div>
