@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { signOut } from '../../store/actions/authActions';
 import { useFirebase } from 'react-redux-firebase';
 
-function SignedInLinks({signOutUser}){
+function SignedInLinks({signOutUser, initials}){
 
     const firebase = useFirebase();
 
@@ -20,7 +20,7 @@ function SignedInLinks({signOutUser}){
                 <button type="button" className='nav__link' onClick={() => handleSignOut()} >Log Out</button>
             </li>
             <li className='nav__list-item'>
-                <NavLink to='/' className='nav__link'>JF</NavLink>
+                <NavLink to='/' className='nav__link'>{initials}</NavLink>
             </li>
         </ul>
     );

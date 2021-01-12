@@ -14,6 +14,8 @@ const firebaseConfig = {
 };
 
 export const rrfConfig = {
+  //Use the users collection in Firestore to update the profile object on Firebase state
+  userProfile: 'users',
   useFirestoreForProfile: true,
 }
 
