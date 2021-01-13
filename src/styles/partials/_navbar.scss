@@ -24,7 +24,7 @@ header{
     }
 
     &__list-item{
-        margin: 0 spaceIncr(3);
+        margin: 0 spaceIncr(2);
         @include flex(row, center, center);
 
         &--initials{

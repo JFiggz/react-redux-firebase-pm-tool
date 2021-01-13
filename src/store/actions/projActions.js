@@ -17,6 +17,29 @@ export const createProject = (project, firestore) => {
             },
         )
         .then(resp => {
+
+            //Add a notification to the notification collection in Firestore reflecting this event
+            const notificationObj = {
+                firstName: userData.profile.firstName,
+                lastName: userData.profile.lastName,
+                authorId: userData.auth.uid,
+                createdOn: new Date(),
+                type: 'Added',
+            };
+
+            firestore.add(
+                {
+                    collection: 'notifications'
+                },
+                notificationObj
+            )
+            .then( resp => { 
+                dispatch({
+                    type: 'CREATE_NOTIFICATION',
+                    notification: notificationObj,
+                });
+            });
+
             dispatch({
                 type: 'CREATE_PROJECT',
                 project,
@@ -34,6 +57,9 @@ export const createProject = (project, firestore) => {
 
 export const deleteProject = (projectId, firestore) => {
     return ((dispatch, getState) => {
+
+        const userData = getState().firebase;
+
         firestore.delete(
             {
                 collection: 'projects',
@@ -41,6 +67,29 @@ export const deleteProject = (projectId, firestore) => {
             },
         )
         .then(resp => {
+            
+            //Add a notification to the notification collection in Firestore reflecting this event
+            const notificationObj = {
+                firstName: userData.profile.firstName,
+                lastName: userData.profile.lastName,
+                authorId: userData.auth.uid,
+                createdOn: new Date(),
+                type: 'Deleted',
+            };
+
+            firestore.add(
+                {
+                    collection: 'notifications'
+                },
+                notificationObj
+            )
+            .then( resp => { 
+                dispatch({
+                    type: 'CREATE_NOTIFICATION',
+                    notification: notificationObj,
+                });
+            });
+
             dispatch({
                 type: 'DELETE_PROJECT',
                 projectId
@@ -58,6 +107,8 @@ export const deleteProject = (projectId, firestore) => {
 export const editProject = (projectId, project, firestore) => {
     return((dispatch, getState) => {
 
+        const userData = getState().firebase;
+
         firestore.update(
             {
                 collection: 'projects',
@@ -68,6 +119,29 @@ export const editProject = (projectId, project, firestore) => {
             }
         )
         .then( resp => {
+
+            //Add a notification to the notification collection in Firestore reflecting this event
+            const notificationObj = {
+                firstName: userData.profile.firstName,
+                lastName: userData.profile.lastName,
+                authorId: userData.auth.uid,
+                createdOn: new Date(),
+                type: 'Edited',
+            };
+
+            firestore.add(
+                {
+                    collection: 'notifications'
+                },
+                notificationObj
+            )
+            .then( resp => { 
+                dispatch({
+                    type: 'CREATE_NOTIFICATION',
+                    notification: notificationObj,
+                });
+            });
+
             dispatch({
                 type: 'EDIT_PROJECT',
                 projectId,
