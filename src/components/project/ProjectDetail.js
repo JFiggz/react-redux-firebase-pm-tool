@@ -7,6 +7,7 @@ import { deleteProject } from '../../store/actions/projActions';
 import { editProject } from '../../store/actions/projActions';
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
+import convertUNIX from '../../utils/convertUNIX';
 
 function ProjectDetail({project, deleteProj, editProj}){
 
@@ -76,7 +77,7 @@ function ProjectDetail({project, deleteProj, editProj}){
                 </>
             }
                 <p className='proj-detail__text'>{`Posted by: ${project.authorFirstName} ${project.authorLastName}`}</p>
-                <p className='proj-detail__text'>{project.createdOn.toDate().toLocaleDateString('en-US')}</p>
+                <p className='proj-detail__text'>{convertUNIX(project.createdOn.toDate())}</p>
             </div>
         </section>
     )

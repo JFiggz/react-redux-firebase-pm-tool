@@ -29,7 +29,9 @@
         @extend .para-text;
         margin: 0 0 spaceIncr();
         &--name{
-            margin: 0 spaceIncr() spaceIncr() 0;
+            font-weight: bold;
+            margin: 0 spaceIncr(0.5) spaceIncr() 0;
+            color: $notification-name;
         }
     }
 }

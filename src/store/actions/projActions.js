@@ -17,14 +17,14 @@ export const createProject = (project, firestore) => {
             },
         )
         .then(resp => {
-
             //Add a notification to the notification collection in Firestore reflecting this event
             const notificationObj = {
                 firstName: userData.profile.firstName,
                 lastName: userData.profile.lastName,
                 authorId: userData.auth.uid,
+                projectId: resp.id,
                 createdOn: new Date(),
-                type: 'Added',
+                type: 'added',
             };
 
             firestore.add(
@@ -73,8 +73,9 @@ export const deleteProject = (projectId, firestore) => {
                 firstName: userData.profile.firstName,
                 lastName: userData.profile.lastName,
                 authorId: userData.auth.uid,
+                projectId: projectId,
                 createdOn: new Date(),
-                type: 'Deleted',
+                type: 'deleted',
             };
 
             firestore.add(
@@ -125,8 +126,9 @@ export const editProject = (projectId, project, firestore) => {
                 firstName: userData.profile.firstName,
                 lastName: userData.profile.lastName,
                 authorId: userData.auth.uid,
+                projectId: projectId,
                 createdOn: new Date(),
-                type: 'Edited',
+                type: 'edited',
             };
 
             firestore.add(

@@ -1,7 +1,8 @@
-import convertUNIX from "./ConvertUNIX";
+import convertUNIX from "./convertUNIX";
 
-export default function setTime(time){
+export default function setTime(createdOn){
     const currentTime = Date.now();
+    const time = createdOn.toDate();
     const timeDiffSeconds = (currentTime - time)/1000;
 
     if(timeDiffSeconds < 60){

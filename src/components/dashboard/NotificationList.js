@@ -1,30 +1,27 @@
-export default function NotificationList(){
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import { firestoreConnect } from 'react-redux-firebase';
+import NotificationItem from './NotificationItem';
+
+
+function NotificationList({notifications}){
     return(
         <aside className='notifications'>
             <h2 className='notifications__header'>Notifications</h2>
             <ul className='notifications__list'>
-                <li className='notifications__list-item'>
-                    <span>
-                        <p className='notifications__text notifications__text--name'>Jim Figs</p>
-                        <p className='notifications__text'>Added a new project</p>
-                    </span>
-                    <p className='notifications__text notifications__text--date'>A few seconds ago</p>
-                </li>
-                <li className='notifications__list-item'>
-                    <span>
-                        <p className='notifications__text notifications__text--name'>Jim Figs</p>
-                        <p className='notifications__text'>Added a new project</p>
-                    </span>
-                    <p className='notifications__text notifications__text--date'>A minute ago</p>
-                </li>
-                <li className='notifications__list-item'>
-                    <span>
-                        <p className='notifications__text notifications__text--name'>Jim Figs</p>
-                        <p className='notifications__text'>Added a new project</p>
-                    </span>
-                    <p className='notifications__text notifications__text--date'>4 days ago</p>
-                </li>
+                {notifications ? notifications.map(notification => <NotificationItem key={notification.id} notification={notification} />) : <p className='notifications__text'>Loading notifications...</p>}
             </ul>
         </aside>
     );
 };
+
+const mapStateToProps = (state) => {
+    return({
+        notifications: state.firestore.ordered.notifications,
+    });
+};
+
+export default compose(
+    firestoreConnect([{collection: 'notifications', limit: 5, orderBy: ['createdOn','desc']}]),
+    connect(mapStateToProps)
+)(NotificationList);
