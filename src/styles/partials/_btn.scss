@@ -1,4 +1,5 @@
 .btn{
+    @extend .btn-text;
     padding: spaceIncr() spaceIncr(3);
     border-radius: spaceIncr();
     border: 2px solid transparent;

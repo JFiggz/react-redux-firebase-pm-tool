@@ -78,6 +78,42 @@
   font-display: swap;
 }
 
+.large-header {
+  font-size: 2.375rem;
+  line-height: 100%;
+  font-weight: bold;
+}
+
+.main-header, .notifications__header, .projects__title, .create-proj__header {
+  font-size: 1.875rem;
+  line-height: 100%;
+  font-weight: bold;
+}
+
+.sub-header, .proj-detail__title {
+  font-size: 1.5rem;
+  line-height: 2.625rem;
+  font-weight: bold;
+}
+
+.link-text, .nav__logo-link, .nav__link, .nav__btn, .projects__text, .create-proj__label {
+  font-size: 1.1875rem;
+  line-height: 2.1875rem;
+  font-weight: normal;
+}
+
+.btn-text, .btn {
+  font-size: 0.9375rem;
+  line-height: 1.8125rem;
+  font-weight: 600;
+}
+
+.para-text, .notifications__text, .create-proj__input, .create-proj__details, .proj-detail__details, .proj-detail__text {
+  font-size: 0.9375rem;
+  line-height: 1.8125rem;
+  font-weight: normal;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -134,7 +170,7 @@ header {
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  padding: 16px 0;
+  padding: 8px 0;
 }
 
 .nav__logo-link {
@@ -150,9 +186,9 @@ header {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -165,13 +201,98 @@ header {
 }
 
 .nav__list-item {
-  padding: 8px 16px;
-  margin: 0 8px;
+  margin: 0 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.nav__list-item--initials {
+  margin-right: 0;
 }
 
 .nav__link {
   text-decoration: none;
   color: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 100%;
+  height: 100%;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.nav__link--initials {
+  border-radius: 50%;
+  background-color: #929aab;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+}
+
+.nav__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  color: inherit;
+  font-family: inherit;
+}
+
+.nav__btn:hover {
+  outline: none;
+  border: 1px solid #393e46;
+}
+
+.nav__btn:active {
+  outline: none;
+  border: 1px solid #393e46;
+}
+
+.nav__btn:focus {
+  outline: none;
+  border: 1px solid #393e46;
 }
 
 .dashboard {
@@ -261,18 +382,18 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 24px;
   border-radius: 8px;
   width: 100%;
@@ -286,11 +407,12 @@ header {
 }
 
 .projects__title {
+  width: 100%;
   margin: 0 0 16px 0;
 }
 
 .projects__text {
-  margin: 0 0 8px;
+  margin: 0;
 }
 
 .projects__text--name {
@@ -474,7 +596,7 @@ header {
 }
 
 .create-proj__form {
-  width: 50%;
+  width: 75%;
   min-width: 500px;
   display: -webkit-box;
   display: -ms-flexbox;

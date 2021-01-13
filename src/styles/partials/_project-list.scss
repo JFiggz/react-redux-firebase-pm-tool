@@ -10,7 +10,7 @@
     &__link{
         text-decoration: none;
         color: inherit;
-        @include flex(column, flex-start, flex-start);
+        @include flex(row, space-between, flex-start, wrap);
         padding: spaceIncr(3);
         border-radius: spaceIncr();
         width: 100%;
@@ -24,11 +24,14 @@
     }
 
     &__title{
+        @extend .main-header;
+        width: 100%;
         margin: 0 0 spaceIncr(2) 0;
     }
 
     &__text{
-        margin: 0 0 spaceIncr();
+        @extend .link-text;
+        margin: 0;
         &--name{
             margin: 0 spaceIncr() spaceIncr() 0;
         }
