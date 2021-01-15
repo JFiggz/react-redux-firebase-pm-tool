@@ -7,26 +7,26 @@ Pro Manage is a project management tool to provide users with an easy way to tra
 The motivation for building this project was as a learning project. I wanted to develop hands on experience with Redux and Firebase/Firestore.
 
 ## Screenshots
-![](homepage-screenshot.jpg)
+![Homepage](homepage-screenshot.jpg)
 
-![](create-proj-screenshot.jpg)
+![Create Project](create-proj-screenshot.jpg)
 
-![](proj-details-screenshot.jpg)
+![Project Details](proj-details-screenshot.jpg)
 
 ## Tech/framework used
-<b>Built with</b>
+**Built with**
 - React
 - Redux/React-Redux
 - Firebase/Firestore
 - React Router
 
 ## How To Run
-<b>Within project folder:<b>
+**Within project folder:**
 ```shell
 npm start
 ```
 
-<b>Allowed Users<b>
+**Allowed Users**
 As the project will not be put into production, a user has been registered with limited functionality to allow viewing of application:
  - email: john@gmail.com pass: john123
 
