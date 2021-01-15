@@ -46,9 +46,7 @@ function ProjectDetail({project, deleteProj, editProj}){
 
     const handleDelete = () => {
         const id = project.id;
-
-        deleteProj(id, firestore);
-        history.push('/');
+        deleteProj(id, firestore, history);
     };
 
     return project ? (
@@ -97,7 +95,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
     return({
-        deleteProj: (id, firestore) => dispatch(deleteProject(id, firestore)),
+        deleteProj: (id, firestore, history) => dispatch(deleteProject(id, firestore, history)),
         editProj: (projectId, project, firestore) => dispatch(editProject(projectId, project, firestore)),
     });
 };

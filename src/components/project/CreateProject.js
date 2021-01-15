@@ -26,8 +26,7 @@ function CreateProject({createProj}){
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        createProj(data, firestore);
-        history.push('/');
+        createProj(data, firestore, history);
     };
 
     return(
@@ -51,7 +50,7 @@ function CreateProject({createProj}){
 
 const mapDispatchToProps = (dispatch) => {
     return({
-        createProj: (project, firestore) => dispatch(createProject(project, firestore)),
+        createProj: (data, firestore, history) => dispatch(createProject(data, firestore, history)),
     });
 };
 

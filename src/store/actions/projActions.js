@@ -1,4 +1,4 @@
-export const createProject = (project, firestore) => {
+export const createProject = (project, firestore, history) => {
     return((dispatch, getState)=>{
 
         const userData = getState().firebase;
@@ -38,12 +38,16 @@ export const createProject = (project, firestore) => {
                     type: 'CREATE_NOTIFICATION',
                     notification: notificationObj,
                 });
+
             });
 
             dispatch({
                 type: 'CREATE_PROJECT',
                 project,
             });
+
+            //On success, re-route to homepage
+            history.push('/');
         })
         .catch(err => {
             dispatch({
@@ -55,7 +59,7 @@ export const createProject = (project, firestore) => {
 };
 
 
-export const deleteProject = (projectId, firestore) => {
+export const deleteProject = (projectId, firestore, history) => {
     return ((dispatch, getState) => {
 
         const userData = getState().firebase;
@@ -95,6 +99,9 @@ export const deleteProject = (projectId, firestore) => {
                 type: 'DELETE_PROJECT',
                 projectId
             });
+
+            //On success, re-route to homepage
+            history.push('/');
         })
         .catch(err => {
             dispatch({
