@@ -4,7 +4,17 @@ This single page application was developed as a learning project.
 Pro Manage is a project management tool that provides users with an easy way to track, manage and collaborate on projects from a centralized dashboard. 
 
 ## Motivation
-The motivation for development of this application was to learn new technologies. I wanted to develop hands on experience with Redux and Firebase/Firestore.
+The motivation for development of this application was to learn new technologies. Having recognized skills that were relevant to today's market, I wanted to develop hands on experience with Redux and Firebase/Firestore.
+
+###Key Challenges:
+I encountered and overcame the following key challenges when developing this application.
+1. Asynchronously updating central store state and Firestore collections
+2. Utilizing React Hooks and Context to connect and store data within Firebase/Firestore
+3. Abstracting action creators to improve code readability while ensuring the appropriate react-redux-firebase hooks were implemented
+4. Adding action creators to handle multiple dispatch actions to separate reducers and Firestore collections
+
+###Main Lesson Learned:
+The main takeaway lesson I learned in this project was how handle asynchronously passing central store state variables to components using Redux and ensuring data alignment with a Firestore database.
 
 ## Screenshots
 ![Homepage](homepage-screenshot.jpg)
