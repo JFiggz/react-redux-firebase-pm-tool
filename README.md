@@ -4,7 +4,7 @@ This single page application was developed as a learning project.
 Pro Manage is a project management tool to provide users with an easy way to track, manage and collaborate on projects from a centralized dashboard. 
 
 ## Motivation
-The motivation for building this project was as a learning project. I wanted to develop hands on experience with Redux and Firebase/Firestore.
+The motivation for this application was as a learning project. I wanted to develop hands on experience with Redux and Firebase/Firestore.
 
 ## Screenshots
 ![Homepage](homepage-screenshot.jpg)
