@@ -21,7 +21,7 @@ The motivation for building this project was as a learning project. I wanted to 
 - React Router
 
 ## How To Run
-**Within project folder:**
+**Within Project Folder:**
 ```shell
 npm start
 ```
