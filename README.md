@@ -14,7 +14,7 @@ The motivation for development of this application was to learn new technologies
 ![Project Details](proj-details-screenshot.jpg)
 
 ## Tech/Framework Used
-**Built with**
+**Built with:**
 - React
 - Redux/React-Redux
 - Firebase/Firestore
