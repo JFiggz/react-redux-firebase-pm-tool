@@ -8,7 +8,9 @@ The motivation for building this project was as a learning project. I wanted to 
 
 ## Screenshots
 ![](homepage-screenshot.jpg)
+
 ![](create-proj-screenshot.jpg)
+
 ![](proj-details-screenshot.jpg)
 
 ## Tech/framework used
