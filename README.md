@@ -13,7 +13,7 @@ I encountered and overcame the following key challenges when developing this app
 3. Abstracting action creators to improve code readability while ensuring the appropriate react-redux-firebase hooks were implemented
 4. Adding action creators to handle multiple dispatch actions to separate reducers and Firestore collections
 
-### Main Lesson Learned:
+### Key Takeaway Lesson:
 The main takeaway lesson I learned in this project was how handle asynchronously passing central store state variables to components using Redux and ensuring data alignment with a Firestore database.
 
 ## Screenshots
