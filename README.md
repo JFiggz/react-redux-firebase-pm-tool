@@ -9,7 +9,7 @@ The motivation for development of this application was to learn new technologies
 ### Key Challenges:
 I encountered and overcame the following key challenges when developing this application.
 1. Asynchronously updating central store state and Firestore collections
-2. Utilizing React Hooks and Context to connect and store data within Firebase/Firestore
+2. Utilizing React Hooks and Context to connect components and store data within Firebase/Firestore
 3. Abstracting action creators to improve code readability while ensuring the appropriate react-redux-firebase hooks were implemented
 4. Adding action creators to handle multiple dispatch actions to separate reducers and Firestore collections
 
