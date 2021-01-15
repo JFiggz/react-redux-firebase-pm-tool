@@ -27,6 +27,7 @@ npm start
 ```
 
 **Allowed Users**
+
 As the project will not be put into production, a user has been registered with limited functionality to allow viewing of application:
  - email: john@gmail.com pass: john123
 
