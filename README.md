@@ -35,7 +35,7 @@ As the project will not be put into production, a user has been registered with 
 This project was developed as a learning project and will not be maintained going forward.
 
 ## Credits
-Inspired by The Net Ninja 
+Inspired by The Net Ninja - 
 https://github.com/iamshaunjp/React-Redux-Firebase-App
 
 
