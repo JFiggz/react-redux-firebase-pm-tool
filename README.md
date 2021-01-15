@@ -13,7 +13,7 @@ The motivation for building this project was as a learning project. I wanted to 
 
 ![Project Details](proj-details-screenshot.jpg)
 
-## Tech/framework used
+## Tech/Framework Used
 **Built with**
 - React
 - Redux/React-Redux
