@@ -16,13 +16,6 @@ I encountered and overcame the following key challenges when developing this app
 ### Key Takeaway Lesson:
 The main takeaway lesson I learned in this project was how handle asynchronously subscribing to central store state variables in components using Redux while ensuring data alignment with a Firestore database.
 
-## Screenshots
-![Homepage](homepage-screenshot.jpg)
-
-![Create Project](create-proj-screenshot.jpg)
-
-![Project Details](proj-details-screenshot.jpg)
-
 ## Tech/Framework Used
 **Built with:**
 - React
@@ -30,12 +23,18 @@ The main takeaway lesson I learned in this project was how handle asynchronously
 - Firebase/Firestore
 - React Router
 
+## Screenshots
+![Homepage](homepage-screenshot.jpg)
+
+![Create Project](create-proj-screenshot.jpg)
+
+![Project Details](proj-details-screenshot.jpg)
+
 ## How To Run
 **Within Project Folder:**
 ```shell
 npm start
 ```
-
 **Allowed Users:**
 
 As the project will not be put into production, a user has been registered with limited functionality to allow viewing of the application:
