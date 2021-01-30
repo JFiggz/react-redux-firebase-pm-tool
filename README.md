@@ -16,7 +16,7 @@ I encountered and overcame the following key challenges when developing this app
 ### Key Takeaway Lesson:
 The main takeaway lesson I learned in this project was how handle asynchronously subscribing to central store state variables in components using Redux while ensuring data alignment with a Firestore database.
 
-## Tech/Framework Used
+## Tech/Frameworks Used
 **Built with:**
 - React
 - Redux/React-Redux
